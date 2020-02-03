@@ -27,17 +27,52 @@
 		
 			<main>
 			
-				<h1>Гостиницы города Седона</h1><!-- Скрытый заголовок -->
+				<h1 class="visually-hidden">Гостиницы города Седона</h1><!-- Скрытый заголовок -->
 				
 				<section><!-- Секция с фильтрами -->
-					<h2>Фильтры</h2><!-- Скрытый заголовок -->
-					<form>
-					<!-- Тут фильтры -->	
+					<h2 class="visually-hidden">Фильтры</h2><!-- Скрытый заголовок -->
+					<form method="get" action="">
+						<div>
+							<h3>Инфраструктура:</h3>
+							<label>
+								<input type="checkbox" value="Бассейн"> Бассейн
+							</label>
+							<label>
+								<input type="checkbox" value="Парковка"> Парковка
+							</label>
+							<label>
+								<input type="checkbox" value="Wi-Fi"> Wi-Fi
+							</label>
+						</div>
+						<div>
+							<h3>Тип жилья:</h3>
+							<label>
+								<input type="checkbox" value="Гостиница"> Гостиница
+							</label>
+							<label>
+								<input type="checkbox" value="Мотель"> Мотель
+							</label>
+							<label>
+								<input type="checkbox" value="Апартаменты"> Апартаменты
+							</label>
+						</div>
+						<div>
+							<h3>Стоимость в сутки (Р):</h3>
+							<div class="price-slider-wrapper">
+								<input type="text" name="booking-price-min" id="price-min" placeholder="Минимальная цена">
+								<input type="text" name="booking-price-max" id="price-max" placeholder="Максимальная цена">
+								<div class="price-slider">
+									<div class="price-slider__handle-left"></div><!-- Это я почитал про БЭМ, попробовал применить -->
+									<div class="price-slider__handle-right"></div>
+								</div>
+							</div>
+							<input type="submit" value="Показать">
+						</div>
 					</form>
 				</section>
 				
 				<section><!-- Секция с результатами -->
-					<h2>Результаты поиска по гостиницам</h2><!-- Скрытый заголовок -->
+					<h2 class="visually-hidden">Результаты поиска по гостиницам</h2><!-- Скрытый заголовок -->
 					<div>
 						<h3>Найдено: 3</h3>
 						<div>

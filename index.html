@@ -89,15 +89,42 @@
 					<h2>Заинтересовались?</h2>
 					<p>Укажите предполагаемые даты поездки,<br>и мы покажем вам лучшие предложения гостиниц в седоне</p>
 					<div>
-						<button type="button">Поиск гостиницы в Седоне</button>
-						<form>
-							<!-- Форма -->
+						<a href="booking.html">Поиск гостиницы в Седоне</a><!-- На случай, если js отключен, переход на страницу с формой заказа -->
+						<form method="post" action="">
+							<h3 class="visually-hidden">Поиск гостиницы в Седоне</h3><!-- Скрытый заголовок. Не совсем уверен, нужен ли он тут -->
+							<div>
+								<label for="date-in">Дата заезда:</label>
+								<input type="text" name="booking-date-in" id="date-in">
+								<button type="button">Выберите дату</button>
+							</div>
+							<div>
+								<label for="date-out">Дата выезда:</label>
+								<input type="text" name="booking-date-out" id="date-out">
+								<button type="button">Выберите дату</button>
+							</div>
+							<div>
+								<label for="adults-num">Взрослые:</label>
+								<div>
+									<input type="number" name="booking-adults-num" id="adults-num" value="1">
+									<button type="button">+</button>
+									<button type="button">–</button>
+								</div>
+							</div>
+							<div>
+								<label for="children-num">Дети:</label>
+								<div>
+									<input type="number" name="booking-children-num" id="children-num" value="0">
+									<button type="button">+</button>
+									<button type="button">–</button>
+								</div>
+							</div>
+							<input type="submit" value="Найти">
 						</form>
 					</div>	
 				</section>
 				
 				<section>
-					<h2>Седона на карте</h2><!-- Скрытый заголовок -->
+					<h2 class="visually-hidden">Седона на карте</h2><!-- Скрытый заголовок -->
 					<div id="sedona-location">
 						<!-- Контейнер для карты -->
 					</div>
