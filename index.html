@@ -91,7 +91,7 @@
 					<div>
 						<a href="booking.html">Поиск гостиницы в Седоне</a><!-- На случай, если js отключен, переход на страницу с формой заказа -->
 						<form method="post" action="">
-							<h3 class="visually-hidden">Поиск гостиницы в Седоне</h3><!-- Скрытый заголовок. Не совсем уверен, нужен ли он тут -->
+							<h3 class="visually-hidden">Поиск гостиницы в Седоне</h3><!-- Скрытый заголовок -->
 							<div>
 								<label for="date-in">Дата заезда:</label>
 								<input type="text" name="booking-date-in" id="date-in">
@@ -105,17 +105,17 @@
 							<div>
 								<label for="adults-num">Взрослые:</label>
 								<div>
-									<input type="number" name="booking-adults-num" id="adults-num" value="1">
-									<button type="button">+</button>
 									<button type="button">–</button>
+									<input type="number" name="booking-adults-num" id="adults-num" value="1">
+									<button type="button">+</button>									
 								</div>
 							</div>
 							<div>
 								<label for="children-num">Дети:</label>
 								<div>
-									<input type="number" name="booking-children-num" id="children-num" value="0">
+									<button type="button">-</button>
+									<input type="number" name="booking-children-num" id="children-num" value="0">									
 									<button type="button">+</button>
-									<button type="button">–</button>
 								</div>
 							</div>
 							<input type="submit" value="Найти">
