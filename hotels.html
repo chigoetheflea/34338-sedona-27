@@ -2,38 +2,39 @@
 <html lang="ru">
 	<head>
 		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/style.css">
 		<title>Лучшие гостиницы города Седона</title>
 	</head>
 	<body>
 	
-		<div><!-- Контейнер с тенью -->
+		<div class="site-wrapper"><!-- Контейнер с тенью -->
 		
-			<header>
+			<header class="main-header">
 			
-				<nav>
-					<a href="index.html" title="Перейти на главную"><!-- Лого - абс. поз. по центру -->
+				<nav class="main-navigation">
+					<a href="index.html" title="Перейти на главную" class="logo-sedona"><!-- Лого - абс. поз. по центру -->
 						<img src="img/logo-sedona.svg" width="140" height="72" alt="Логотип города Седона">
 					</a>
-					<ul>
+					<ul class="menu-top">
 						<li><a href="">Информация</a></li>
 						<li><a href="">Фото и видео</a></li>
 						<li><a href="">Карта штата</a></li>
-						<li><a>Гостиницы</a></li>
+						<li class="current-page-menu-item"><a>Гостиницы</a></li>
 					</ul>
 				</nav>
 				
 			</header>
 		
-			<main>
+			<main class="main-content">
 			
-				<h1 class="visually-hidden">Гостиницы города Седона</h1><!-- Скрытый заголовок -->
+				<h1 class="visually-hidden">Гостиницы города Седона</h1>
 				
-				<section><!-- Секция с фильтрами -->
-					<h2 class="visually-hidden">Фильтры</h2><!-- Скрытый заголовок -->
+				<section class="section-filters"><!-- Секция с фильтрами -->
+					<h2 class="visually-hidden">Фильтры</h2>
 					<form method="get" action="">
-						<div>
-							<h3>Инфраструктура:</h3>
+						<div class="column-left">
+							<h3 class="header-small">Инфраструктура:</h3>
 							<label>
 								<input type="checkbox" value="Бассейн"> Бассейн
 							</label>
@@ -44,8 +45,8 @@
 								<input type="checkbox" value="Wi-Fi"> Wi-Fi
 							</label>
 						</div>
-						<div>
-							<h3>Тип жилья:</h3>
+						<div class="column-left">
+							<h3 class="header-small">Тип жилья:</h3>
 							<label>
 								<input type="checkbox" value="Гостиница"> Гостиница
 							</label>
@@ -56,8 +57,8 @@
 								<input type="checkbox" value="Апартаменты"> Апартаменты
 							</label>
 						</div>
-						<div>
-							<h3>Стоимость в сутки (Р):</h3>
+						<div class="column-right">
+							<h3 class="header-small">Стоимость в сутки (Р):</h3>
 							<div class="price-slider-wrapper">
 								<input type="text" name="booking-price-min" id="price-min" placeholder="Минимальная цена">
 								<input type="text" name="booking-price-max" id="price-max" placeholder="Максимальная цена">
@@ -66,14 +67,14 @@
 									<div class="handle-right"></div>
 								</div>
 							</div>
-							<input type="submit" value="Показать">
+							<input type="submit" value="Показать" class="button button-empty-white">
 						</div>
 					</form>
 				</section>
 				
 				<section><!-- Секция с результатами -->
 					<h2 class="visually-hidden">Результаты поиска по гостиницам</h2><!-- Скрытый заголовок -->
-					<div>
+					<div class="sorting">
 						<h3>Найдено: 3</h3>
 						<div>
 							Сортировка:
@@ -86,88 +87,134 @@
 							<button type="button">По убыванию</button>
 						</div>
 					</div>	
-					<ul>
+					<ul class="hotels-list">
 						<li>
-							<article>
-								<img src="img/amara-resort-preview.jpg" alt="Amara Resort & Spa" width="135" height="90">
-								<section>
-									<h3>Amara Resort & Spa</h3>
-									<p>
+							<article class="hotel-item">
+								<img src="img/amara-resort-preview.jpg" alt="Amara Resort & Spa" width="135" height="90" class="hotel-preview">
+								<section class="hotel-description">
+									<h3 class="header-regular">Amara Resort & Spa</h3>
+									<p class="hotel-type clear">
 										<span>Гостиница</span>
 										<span>От 4000 Р.</span>
 									</p>
-									<p>
-										<a href="">Подробнее</a>
-										<button type="button">Забронировать</button>
+									<p class="hotel-buttons clear">
+										<a href="" class="button button-blue button-small">Подробнее</a>
+										<button type="button" class="button button-brown button-small">Забронировать</button>
 									</p>									
 								</section>
-								<div>
-									<span class="stars-4"></span><!-- Звездочки фоном -->
-									<span>Рейтинг: 8,5</span>
+								<div class="hotel-meta">
+									<span class="stars stars-4" aria-label="4 звезды"></span><!-- Звездочки фоном -->
+									<span class="rating">Рейтинг: 8,5</span>
 								</div>
 							</article>
 						</li>
 						<li>
-							<article>
-								<img src="img/desert-quail-preview.jpg" alt="Desert Quail Inn" width="135" height="90">
-								<section>
-									<h3>Desert Quail Inn</h3>
-									<p>
+							<article class="hotel-item">
+								<img src="img/desert-quail-preview.jpg" alt="Amara Resort & Spa" width="135" height="90" class="hotel-preview">
+								<section class="hotel-description">
+									<h3 class="header-regular">Desert Quail Inn</h3>
+									<p class="hotel-type clear">
 										<span>Мотель</span>
 										<span>От 3000 Р.</span>
 									</p>
-									<p>
-										<a href="">Подробнее</a>
-										<button type="button">Забронировать</button>
+									<p class="hotel-buttons clear">
+										<a href="" class="button button-blue button-small">Подробнее</a>
+										<button type="button" class="button button-brown button-small">Забронировать</button>
 									</p>									
 								</section>
-								<div>
-									<span class="stars-3"></span><!-- Звездочки фоном -->
-									<span>Рейтинг: 8,9</span>
+								<div class="hotel-meta">
+									<span class="stars stars-3" aria-label="3 звезды"></span><!-- Звездочки фоном -->
+									<span class="rating">Рейтинг: 8,9</span>
 								</div>
-							</article>
+							</article>							
 						</li>
 						<li>
-							<article>
-								<img src="img/villas-at-poco-diablo.jpg" alt="Villas at Poco Diablo" width="135" height="90">
-								<section>
-									<h3>Villas at Poco Diablo</h3>
-									<p>
+							<article class="hotel-item">
+								<img src="img/villas-at-poco-diablo.jpg" alt="Villas at Poco Diablo" width="135" height="90" class="hotel-preview">
+								<section class="hotel-description">
+									<h3 class="header-regular">Villas at Poco Diablo</h3>
+									<p class="hotel-type clear">
 										<span>Апартаменты</span>
 										<span>От 2000 Р.</span>
 									</p>
-									<p>
-										<a href="">Подробнее</a>
-										<button type="button">Забронировать</button>
+									<p class="hotel-buttons clear">
+										<a href="" class="button button-blue button-small">Подробнее</a>
+										<button type="button" class="button button-brown button-small">Забронировать</button>
 									</p>									
 								</section>
-								<div>
-									<span class="stars-2"></span><!-- Звездочки фоном -->
-									<span>Рейтинг: 9,2</span>
+								<div class="hotel-meta">
+									<span class="stars stars-2" aria-label="2 звезды"></span><!-- Звездочки фоном -->
+									<span class="rating">Рейтинг: 9,2</span>
 								</div>
-							</article>
+							</article>							
 						</li>
 					</ul>
 				</section>
 				
 			</main>
 			
-			<footer>
-				<div>
-					<span>#visitsedona</span>
-					Тел.: <a href="tel:+74956660266">+7(495) 666-02-66</a>
+			<footer class="inner-page-footer">
+				<div class="column-one-third footer-column">
+					<span class="hashtag">#visitsedona</span>
+					<span class="tel">
+						Тел.: <a href="tel:+74956660266">+7(495) 666-02-66</a>
+					</span>	
 				</div>
-				<div>
-					<ul>
-						<li><a href="https://twitter.com/sedona">twitter</a></li>
-						<li><a href="https://facebook.com/sedona">facebook</a></li>
-						<li><a href="https://youtube.com/sedona">youtube</a></li>
+				<div class="column-one-third footer-column">
+					<ul class="social-links">
+						<li>
+							<a href="https://twitter.com/sedona">
+								<span class="icon-twitter"></span>
+								<span class="visually-hidden">twitter</span>
+							</a>
+						</li>
+						<li>
+							<a href="https://facebook.com/sedona">
+								<span class="icon-fb"></span>
+								<span class="visually-hidden">facebook</span>
+							</a>
+						</li>
+						<li>
+							<a href="https://youtube.com/sedona">
+								<span class="icon-youtube"></span>
+								<span class="visually-hidden">youtube</span>
+							</a>
+						</li>
 					</ul>
 				</div>
-				<div>
+				<div class="column-one-third footer-column">
 					Website by
-					<a href="https://htmlacademy.ru/intensive/htmlcss" target="_blank" title="Разработано в HTML Academy">
-						<img src="img/logo-htmlacademy.svg" alt="HTML Academy" width="115" height="41">
+					<a href="https://htmlacademy.ru/intensive/htmlcss" target="_blank" title="Разработано в HTML Academy" aria-label="Разработано в HTML Academy" class="logo-htmla">
+						<svg>
+							<path class="st0" d="M44.6,26.9c0.2,0,0.4,0,0.5-0.1v1.3c-0.4,0.1-0.8,0.2-1.2,0.2c-0.7,0.1-1.4-0.3-1.7-1c-0.9,0.7-2,1.1-3.1,1.1
+							c-1.5,0-2.9-0.8-2.9-2.5c0-2.1,2-2.8,3.7-2.8c0.7,0,1.5,0.1,2.2,0.3V23c0-1-0.8-1.8-2.2-1.8c-1,0-2.1,0.2-3,0.6v-1.7
+							c1-0.4,2.1-0.5,3.2-0.5c2.4,0,3.8,1.1,3.8,3.6v3c0,0.3,0.2,0.6,0.5,0.6c0,0,0,0,0,0L44.6,26.9L44.6,26.9z M38.2,25.7
+							c0.1,0.7,0.7,1.3,1.4,1.3c0,0,0,0,0,0h0.1c0.9,0,1.8-0.4,2.4-1v-1.4c-0.6-0.1-1.2-0.2-1.8-0.2C39.3,24.3,38.2,24.7,38.2,25.7
+							L38.2,25.7L38.2,25.7z M50.5,19.6c0.9,0,1.8,0.2,2.6,0.6V22c-0.7-0.5-1.5-0.7-2.3-0.7c-1.5-0.1-2.8,1.1-2.9,2.6s1.1,2.8,2.6,2.9
+							c0.1,0,0.2,0,0.3,0c0.9,0,1.7-0.2,2.4-0.6v1.7c-0.9,0.4-1.8,0.6-2.8,0.6c-2.3,0.1-4.3-1.6-4.5-3.9c0-0.1,0-0.3,0-0.4
+							c-0.1-2.4,1.8-4.4,4.2-4.5c0,0,0,0,0,0H50.5L50.5,19.6z M62.7,26.9c0.2,0,0.4,0,0.5-0.1v1.3c-0.4,0.1-0.8,0.2-1.2,0.2
+							c-0.7,0.1-1.4-0.3-1.7-1c-0.9,0.7-2,1.1-3.1,1.1c-1.5,0-2.9-0.8-2.9-2.5c0-2.1,2-2.8,3.7-2.8c0.7,0,1.5,0.1,2.2,0.3V23
+							c0-1-0.8-1.8-2.2-1.8c-1,0-2.1,0.2-3,0.6v-1.7c1-0.4,2.1-0.5,3.2-0.5c2.4,0,3.8,1.1,3.8,3.6v3c0,0.3,0.2,0.6,0.5,0.6c0,0,0,0,0,0
+							L62.7,26.9L62.7,26.9z M56.3,25.7c0.1,0.7,0.7,1.3,1.4,1.3c0,0,0,0,0,0h0.1c0.9,0,1.8-0.4,2.4-1v-1.4c-0.6-0.1-1.2-0.2-1.8-0.2
+							C57.4,24.3,56.3,24.7,56.3,25.7L56.3,25.7L56.3,25.7z M73,16v12.2h-1.7v-1.3c-0.8,1-1.9,1.6-3.2,1.5c-2.4-0.2-4.3-2.3-4.1-4.7
+							c0.1-2.2,1.9-3.9,4.1-4.1c1.1,0,2.2,0.4,3,1.3V16H73z M68.5,21.2c-1.5,0-2.8,1.2-2.8,2.8s1.2,2.8,2.8,2.8c1.2,0,2.2-0.7,2.7-1.7v-2
+							C70.7,21.9,69.6,21.3,68.5,21.2L68.5,21.2z M79,19.6c3.3,0,4.5,2.7,3.9,5.1h-6.2c0.2,1.5,1.7,2.1,3.2,2.1c0.9,0,1.8-0.2,2.6-0.6v1.6
+							c-0.9,0.4-2,0.6-3,0.6c-2.5,0-4.8-1.4-4.8-4.4c-0.1-2.3,1.7-4.3,4-4.4c0,0,0,0,0,0L79,19.6L79,19.6z M79.1,21.2
+							c-1.3-0.1-2.3,0.8-2.4,2.1v0.1h4.7c0.1-1.1-0.7-2.1-1.8-2.2C79.4,21.1,79.2,21.1,79.1,21.2L79.1,21.2z M84.8,28.2v-8.3h1.7v1
+							c0.7-0.8,1.7-1.3,2.8-1.3c1.1-0.1,2.1,0.5,2.6,1.4c0.8-0.8,1.8-1.3,2.9-1.3c1.7-0.1,3.1,1.2,3.2,2.9c0,0.1,0,0.3,0,0.4v5.2h-1.9V23
+							c0.1-0.9-0.5-1.7-1.4-1.7c0,0,0,0,0,0h-0.3c-0.8,0.1-1.6,0.5-2.1,1.1v5.8h-1.9V23c0.1-0.9-0.6-1.7-1.4-1.7c0,0,0,0,0,0h-0.2
+							c-0.9,0.1-1.7,0.6-2.2,1.3v5.6L84.8,28.2L84.8,28.2z M106.1,19.8h1.9l-3.9,9.5c-0.9,2.2-2.1,2.9-3.3,2.9c-0.4,0-0.7-0.1-1.1-0.1
+							v-1.6c0.3,0.1,0.6,0.1,0.8,0.1c0.9,0,1.6-0.6,2.1-1.9l0.2-0.4l-4-8.4h2l2.9,6.3L106.1,19.8z M38.7,1.4v4.8c0.7-0.7,1.7-1.1,2.7-1.1
+							c1.8-0.1,3.3,1.3,3.4,3.1c0,0.1,0,0.2,0,0.3v5.1H43V8.7c0.1-1-0.6-1.9-1.6-2c0,0,0,0,0,0h-0.3c-1,0.1-1.8,0.6-2.3,1.4v5.5h-1.9V1.4
+							H38.7L38.7,1.4z M49.9,2.3v3h3v1.6h-3v3.8c0,1.1,0.5,1.5,1.6,1.5c0.6,0,1.2-0.1,1.7-0.3v1.6c-0.7,0.2-1.5,0.4-2.2,0.4
+							c-1.4,0.2-2.7-0.8-2.8-2.2c0-0.2,0-0.4,0-0.5V6.9h-1.6V5.2h1.5V2.7L49.9,2.3z M55.3,13.6V5.3H57v1C57.7,5.5,58.7,5,59.8,5
+							c1-0.1,2,0.4,2.6,1.3C63.1,5.5,64.2,5,65.3,5c1.7-0.1,3.1,1.2,3.2,2.9c0,0.2,0,0.3,0,0.5v5.2h-1.9V8.4c0.1-0.9-0.5-1.7-1.4-1.7
+							c0,0,0,0,0,0h-0.2c-0.8,0.1-1.6,0.5-2.1,1.1v5.8h-1.9V8.4c0.1-0.9-0.5-1.7-1.4-1.7c0,0,0,0,0,0h-0.2c-0.9,0.1-1.7,0.6-2.2,1.3v5.6
+							L55.3,13.6L55.3,13.6z M71.2,1.4H73v12.2h-1.8V1.4z M14.7,0h-0.2L0,1.5v26.7l14.6,8.7l14.6-8.7V1.5L14.7,0z M27.2,27.1l-12.7,7.5
+							L1.9,27.1V16.2l12.6,7.5V25l-8.6-5.1v1.3l8.7,5.2v1.4l-8.7-5.2V24l8.7,5.2l8.7-5.2v-5.7l3.9-2.3L27.2,27.1L27.2,27.1z M27.2,14.5
+							l-3.5,2l-1.6,1L14.5,13v1.3l6.5,3.9l0,0l-0.1,0.1l-1,0.5l-5.4-3.2V17l4.2,2.5l-1,0.7l-3.2-1.9v1.3l2.1,1.2l-2.1,1.3L2,14.6l12.5-7.5
+							L27.2,14.5z M27.2,13.2L14.5,5.7L1.9,13.2v-10l12.7-1.3l12.6,1.3V13.2C27.2,13.2,27.2,13.2,27.2,13.2z"/>
+						</svg>
 					</a>
 				</div>
 			</footer>
