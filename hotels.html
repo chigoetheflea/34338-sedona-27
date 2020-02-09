@@ -19,8 +19,8 @@
 					<ul class="menu-top">
 						<li><a href="">Информация</a></li>
 						<li><a href="">Фото и видео</a></li>
-						<li><a href="">Карта штата</a></li>
-						<li class="current-page-menu-item"><a>Гостиницы</a></li>
+						<li class="menu-item-right"><a href="">Карта штата</a></li>
+						<li class="menu-item-right current-page-menu-item"><a>Гостиницы</a></li>
 					</ul>
 				</nav>
 				
@@ -33,7 +33,7 @@
 				<section class="section-filters"><!-- Секция с фильтрами -->
 					<h2 class="visually-hidden">Фильтры</h2>
 					<form method="get" action="">
-						<div class="column-left">
+						<div class="column-left filters-column-1">
 							<h3 class="header-small">Инфраструктура:</h3>
 							<label>
 								<input type="checkbox" value="Бассейн"> Бассейн
@@ -45,7 +45,7 @@
 								<input type="checkbox" value="Wi-Fi"> Wi-Fi
 							</label>
 						</div>
-						<div class="column-left">
+						<div class="column-left filters-column-2">
 							<h3 class="header-small">Тип жилья:</h3>
 							<label>
 								<input type="checkbox" value="Гостиница"> Гостиница
@@ -57,8 +57,8 @@
 								<input type="checkbox" value="Апартаменты"> Апартаменты
 							</label>
 						</div>
-						<div class="column-right">
-							<h3 class="header-small">Стоимость в сутки (Р):</h3>
+						<div class="column-right filters-column-3">
+							<h3 class="header-small-price">Стоимость в сутки (Р):</h3>
 							<div class="price-slider-wrapper">
 								<input type="text" name="booking-price-min" id="price-min" placeholder="Минимальная цена">
 								<input type="text" name="booking-price-max" id="price-max" placeholder="Максимальная цена">
@@ -93,14 +93,14 @@
 								<img src="img/amara-resort-preview.jpg" alt="Amara Resort & Spa" width="135" height="90" class="hotel-preview">
 								<section class="hotel-description">
 									<h3 class="header-regular">Amara Resort & Spa</h3>
-									<p class="hotel-type clear">
-										<span>Гостиница</span>
+									<div class="hotel-type"> <!-- p заменил на div, чтобы не было отступов сразу -->
+										<span class="type">Гостиница</span>
 										<span>От 4000 Р.</span>
-									</p>
-									<p class="hotel-buttons clear">
+									</div>
+									<div class="hotel-buttons">
 										<a href="" class="button button-blue button-small">Подробнее</a>
 										<button type="button" class="button button-brown button-small">Забронировать</button>
-									</p>									
+									</div>									
 								</section>
 								<div class="hotel-meta">
 									<span class="stars stars-4" aria-label="4 звезды"></span><!-- Звездочки фоном -->
@@ -113,14 +113,14 @@
 								<img src="img/desert-quail-preview.jpg" alt="Amara Resort & Spa" width="135" height="90" class="hotel-preview">
 								<section class="hotel-description">
 									<h3 class="header-regular">Desert Quail Inn</h3>
-									<p class="hotel-type clear">
-										<span>Мотель</span>
+									<div class="hotel-type">
+										<span class="type">Мотель</span>
 										<span>От 3000 Р.</span>
-									</p>
-									<p class="hotel-buttons clear">
+									</div>
+									<div class="hotel-buttons">
 										<a href="" class="button button-blue button-small">Подробнее</a>
 										<button type="button" class="button button-brown button-small">Забронировать</button>
-									</p>									
+									</div>									
 								</section>
 								<div class="hotel-meta">
 									<span class="stars stars-3" aria-label="3 звезды"></span><!-- Звездочки фоном -->
@@ -133,14 +133,14 @@
 								<img src="img/villas-at-poco-diablo.jpg" alt="Villas at Poco Diablo" width="135" height="90" class="hotel-preview">
 								<section class="hotel-description">
 									<h3 class="header-regular">Villas at Poco Diablo</h3>
-									<p class="hotel-type clear">
-										<span>Апартаменты</span>
+									<div class="hotel-type">
+										<span class="type">Апартаменты</span>
 										<span>От 2000 Р.</span>
-									</p>
-									<p class="hotel-buttons clear">
+									</div>
+									<div class="hotel-buttons">
 										<a href="" class="button button-blue button-small">Подробнее</a>
 										<button type="button" class="button button-brown button-small">Забронировать</button>
-									</p>									
+									</div>									
 								</section>
 								<div class="hotel-meta">
 									<span class="stars stars-2" aria-label="2 звезды"></span><!-- Звездочки фоном -->
@@ -163,7 +163,7 @@
 				<div class="column-one-third footer-column">
 					<ul class="social-links">
 						<li>
-							<a href="https://twitter.com/sedona" class="icon-twitter">
+							<a href="https://twitter.com/sedona" class="social-link icon-twitter">
 								<svg width="17" height="15" viewBox="0 0 17 15">
 									<path d="M10.95.144c1.685-.496 2.984.27 3.577 1.179.673-.231 1.331-.481 2.011-.708a2.345 2.345 0 0 1-.857 1.768c.685.17 1.304-.491 1.304-.491-.169 1-1.006 1.788-1.563 2.024-.231 6.75-3.175 11.217-10.077 11.082h-.446c-.41 0-4.164-.46-4.898-1.887 2.271.196 3.893-.422 4.693-1.177-.96-.3-2.679-.477-2.979-2.95.349.106.564.228 1.19.119C1.705 8.247.374 7.53.448 5.33c.285.328 1.067.536 1.34.472C1.085 5.561-.182 2.442.894.85c1.818 1.854 3.735 3.606 7.152 3.773C8.254 2.33 9.183.793 10.95.144z"/>
 								</svg>
@@ -171,7 +171,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="https://facebook.com/sedona" class="icon-fb">
+							<a href="https://facebook.com/sedona" class="social-link icon-fb">
 								<svg width="12" height="22" viewBox="0 0 12 22">
 									<path d="M12 4V0H8a4 4 0 0 0-4 4v4H0v4h4v10h4V12h4V8H8V4h4z"/>
 								</svg>
@@ -179,7 +179,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="https://youtube.com/sedona" class="icon-youtube">
+							<a href="https://youtube.com/sedona" class="social-link icon-youtube">
 								<svg width="20" height="16" viewBox="0 0 20 16">
 									<path d="M17 0H3C1.35 0 0 1.35 0 3v10c0 1.65 1.35 3 3 3h14c1.65 0 3-1.35 3-3V3c0-1.65-1.35-3-3-3zM6.027 11.998V4.002L15.014 8l-8.987 3.998z"/>
 								</svg>
