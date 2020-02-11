@@ -189,7 +189,7 @@ img {
 	line-height: 56px;	
 }
 
-.menu-item-right{
+.menu-item-right {
 	text-align: right;
 }
 
@@ -217,7 +217,7 @@ img {
 	position: absolute;
 	top:0;
 	left: 50%;
-	margin-left: -70px;
+	transform: translate(-50%, 0);
 }
 
 /* HEADER */
@@ -532,7 +532,7 @@ img {
 	margin-bottom: 8px;
 }
 
-.tel a{
+.tel a {
 	color: #000000;
 }
 
@@ -585,7 +585,7 @@ img {
 }
 
 .logo-htmla,
-.logo-htmla svg{
+.logo-htmla svg {
 	width: 115px;
 	height: 39px;
 }
