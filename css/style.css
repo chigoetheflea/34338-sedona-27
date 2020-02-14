@@ -164,8 +164,60 @@ img {
 	border-color: #bdbbbc;
 }
 
+.button-sort {
+	padding: 3px;
+	margin-left: 30px;
+	
+	color: #b1b1b1;
+	
+	background: none;
+	
+	border: none;
+	border-bottom: 1px dotted #81b3d2;
+}
+
+.button-sort.active {
+	color: #81b3d2;
+	border-bottom: none;
+}
+
+.button-sort:hover,
+.button-sort:focus {
+	color: #81b3d2;	
+}
+
+.button-sort:active {
+	color: #000000;	
+}
+
+.button-sort-dir {
+	padding: 0;
+	margin-left: 8px;
+	font-size: 0;
+	background: none;
+	border: none;
+}
+
+.button-sort-dir svg {
+	fill: #cacaca;
+}
+
+.button-sort-dir.active svg {
+	fill: #81b3d2;
+}
+
+.button-sort-dir:hover svg,
+.button-sort-dir:focus svg {
+	fill: #81b3d2;
+}
+
+.button-sort-dir:active svg,
+.button-sort-dir:active svg {
+	fill: #000000;
+}
+
 .column-one-third {
-	width: 33.33%;
+	flex-basis: 33.33%;
 }
 
 /* HEADER */
@@ -185,7 +237,7 @@ img {
 }
 
 .menu-top li {
-	width: 25%;
+	flex-basis: 25%;
 	line-height: 56px;	
 }
 
@@ -230,6 +282,12 @@ img {
 	line-height: 26px;
 }
 
+.header-large {
+	margin-top: 0;
+	margin-bottom: 30px;
+	font-size: 30px;
+}
+
 .section-welcome {	
 	height: 510px;
 	display: flex;
@@ -254,27 +312,76 @@ img {
 }
 
 .reasons {
+	display: flex;
+	flex-wrap: wrap;
 	margin: 0;
 	padding: 0;
 	list-style: none;	
 }
 
 .reason {
-	width: 33.33%;
-	height: 255px;
-	padding: 0 60px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	flex-basis: 33.33%;
+	height: 256px;
 	
 	text-align: center;
 }
 
+.reason.block-tall {
+	height: 330px;
+}
+
+.reason:not(.block-img) {
+	padding: 0 60px;
+	
+	/*
+	
+		Тут вот вопрос: как без использования br сделать соответствующий макету перенос строк?
+		Сделал через паддинг, но не везде попадает.
+		Или надо каждому блоку .reason задать свою ширину и потом на контейнер space-around навесить?
+		И к заголовкам тот же вопрос.
+	
+	*/
+}
+
 .reason .header-regular {
-	margin-bottom: 30px;
+	margin-top: 0;
+	margin-bottom: 23px;		
 	line-height: 21px;
+}
+
+.with-padding {
+	padding: 0 25%;
+}
+
+.reason p {
+	margin: 0;
+}
+
+.reason-icon {
+	margin-bottom: 24px;
 }
 
 .reason-number {
 	display: block;
-	margin-bottom: 30px;
+	margin-bottom: 20px;
+}
+
+.block-img {
+	flex-grow: 1;
+	flex-basis: 66.66%;
+}
+
+.block-blue {
+	color: #fff;
+	background-color: #81b3d2; 
+}
+
+.block-gray {
+	background-color: #eeeeee; 
 }
 
 .booking-form-wrapper {
@@ -330,15 +437,6 @@ img {
 	
 	width: 100%;
 	height: 100%;
-}
-
-.block-blue {
-	color: #fff;
-	background-color: #81b3d2; 
-}
-
-.block-gray {
-	background-color: #eeeeee; 
 }
 
 /* INDEX MAIN CONTENT */
@@ -486,8 +584,20 @@ img {
 }
 
 .sorting {
+	display: flex;
+	justify-content: space-between;
 	padding-top: 32px;
 	padding-bottom: 32px;
+	font-size: 12px;
+}
+
+.sorting .header-regular {
+	margin: 0 50px 0 0;	
+}
+
+.sorting .column-left {
+	display: flex;
+	align-items: baseline;
 }
 
 .hotels-list li,

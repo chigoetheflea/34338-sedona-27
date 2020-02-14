@@ -8,12 +8,12 @@
 	</head>
 	<body>
 	
-		<div class="site-wrapper"><!-- Контейнер с тенью -->
+		<div class="site-wrapper">
 		
 			<header class="main-header">
 			
 				<nav class="main-navigation">
-					<a href="index.html" title="Перейти на главную" class="logo-sedona"><!-- Лого - абс. поз. по центру -->
+					<a href="index.html" title="Перейти на главную" class="logo-sedona">
 						<img src="img/logo-sedona.svg" width="140" height="72" alt="Логотип города Седона">
 					</a>
 					<ul class="menu-top">
@@ -72,19 +72,25 @@
 					</form>
 				</section>
 				
-				<section><!-- Секция с результатами -->
-					<h2 class="visually-hidden">Результаты поиска по гостиницам</h2><!-- Скрытый заголовок -->
+				<section class="section-results">
+					<h2 class="visually-hidden">Результаты поиска по гостиницам</h2>
 					<div class="sorting">
-						<h3>Найдено: 3</h3>
-						<div>
+						<div class="column-left">
+							<h3 class="header-regular">Найдено: 3</h3>
 							Сортировка:
-							<button type="button">По цене</button>
-							<button type="button">По типу</button>
-							<button type="button">По рейтингу</button>
+							<button type="button" class="button button-sort active">По цене</button>
+							<button type="button" class="button button-sort">По типу</button>
+							<button type="button" class="button button-sort">По рейтингу</button>
 						</div>
-						<div>
-							<button type="button">По возрастанию</button>
-							<button type="button">По убыванию</button>
+						<div class="column-right">
+							<button type="button" class="button button-sort-dir">
+								<svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10"><path d="M5.5 0L0 10h11z"/></svg>
+								По возрастанию
+							</button>
+							<button type="button" class="button button-sort-dir active">
+								<svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10"><path d="M5.5 10L0 0h11"/></svg>
+								По убыванию
+							</button>
 						</div>
 					</div>	
 					<ul class="hotels-list">
@@ -93,7 +99,7 @@
 								<img src="img/amara-resort-preview.jpg" alt="Amara Resort & Spa" width="135" height="90" class="hotel-preview">
 								<section class="hotel-description">
 									<h3 class="header-regular">Amara Resort & Spa</h3>
-									<div class="hotel-type"> <!-- p заменил на div, чтобы не было отступов сразу -->
+									<div class="hotel-type">
 										<span class="type">Гостиница</span>
 										<span>От 4000 Р.</span>
 									</div>
@@ -103,7 +109,7 @@
 									</div>									
 								</section>
 								<div class="hotel-meta">
-									<span class="stars stars-4" aria-label="4 звезды"></span><!-- Звездочки фоном -->
+									<span class="stars stars-4" aria-label="4 звезды"></span>
 									<span class="rating">Рейтинг: 8,5</span>
 								</div>
 							</article>
@@ -123,7 +129,7 @@
 									</div>									
 								</section>
 								<div class="hotel-meta">
-									<span class="stars stars-3" aria-label="3 звезды"></span><!-- Звездочки фоном -->
+									<span class="stars stars-3" aria-label="3 звезды"></span>
 									<span class="rating">Рейтинг: 8,9</span>
 								</div>
 							</article>							
@@ -143,7 +149,7 @@
 									</div>									
 								</section>
 								<div class="hotel-meta">
-									<span class="stars stars-2" aria-label="2 звезды"></span><!-- Звездочки фоном -->
+									<span class="stars stars-2" aria-label="2 звезды"></span>
 									<span class="rating">Рейтинг: 9,2</span>
 								</div>
 							</article>							
@@ -155,10 +161,12 @@
 			
 			<footer class="inner-page-footer">
 				<div class="column-one-third footer-column">
-					<span class="hashtag">#visitsedona</span>
-					<span class="tel">
-						Тел.: <a href="tel:+74956660266">+7(495) 666-02-66</a>
-					</span>	
+					<div>
+						<div class="hashtag">#visitsedona</div>
+						<div class="tel">
+							Тел.: <a href="tel:+74956660266">+7(495) 666-02-66</a>
+						</div>	
+					</div>
 				</div>
 				<div class="column-one-third footer-column">
 					<ul class="social-links">
