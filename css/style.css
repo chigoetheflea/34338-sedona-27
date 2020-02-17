@@ -277,7 +277,8 @@ img {
 /* INDEX MAIN CONTENT */
 
 .header-regular {
-	margin-bottom: 40px;
+	margin-top: 0;
+	margin-bottom: 34px;
 	font-size: 21px;
 	line-height: 26px;
 }
@@ -289,11 +290,22 @@ img {
 }
 
 .section-welcome {	
-	height: 510px;
+	
+	/*
+	
+		Если теперь здесь без фиксированной высоты, 
+		то и флекс вроде не нужен для выравнивания контента?
+		Можно img через text-align центрировать?
+		Или из-за возможной смены/добавления контента оставляем?		
+	
+	*/	
+	
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	
+	padding-top: 76px;
+	padding-bottom: 80px;
+		
 	background-image: 
 		url("../img/intro-mask.svg"),
 		url("../img/bg-mountains.jpg");
@@ -307,7 +319,7 @@ img {
 }
 
 .content-center {
-	padding: 60px 25%;	
+	padding: 54px 0;	
 	text-align: center;
 }
 
@@ -322,47 +334,42 @@ img {
 .reason {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	align-items: center;
-	flex-basis: 33.33%;
-	height: 256px;
-	
+	flex-basis: 33.33%;	
 	text-align: center;
-}
-
-.reason.block-tall {
-	height: 330px;
-}
-
-.reason:not(.block-img) {
-	padding: 0 60px;
-	
-	/*
-	
-		Тут вот вопрос: как без использования br сделать соответствующий макету перенос строк?
-		Сделал через паддинг, но не везде попадает.
-		Или надо каждому блоку .reason задать свою ширину и потом на контейнер space-around навесить?
-		И к заголовкам тот же вопрос.
-	
-	*/
-}
-
-.reason .header-regular {
-	margin-top: 0;
-	margin-bottom: 23px;		
-	line-height: 21px;
-}
-
-.with-padding {
-	padding: 0 25%;
 }
 
 .reason p {
 	margin: 0;
 }
 
-.reason-icon {
+.reason-regular {
+	padding-top: 47px;
+	padding-bottom: 61px;
+}
+
+.reason-tall {
+	padding-top: 60px;
+	padding-bottom: 84px;
+}
+
+.reason-header {
+	margin-bottom: 23px;		
+	line-height: 21px;
+}
+
+.icon-wrapper {
+	position: relative;
+	width: 75px;
+	height: 76px;
 	margin-bottom: 24px;
+}
+
+.icon-wrapper img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 .reason-number {
@@ -370,9 +377,13 @@ img {
 	margin-bottom: 20px;
 }
 
-.block-img {
+.block-img {	
 	flex-grow: 1;
 	flex-basis: 66.66%;
+}
+
+.block-img img {
+	display: block;
 }
 
 .block-blue {
@@ -439,16 +450,57 @@ img {
 	height: 100%;
 }
 
+.content-width {
+	margin-right: auto;
+	margin-left: auto;	
+}
+
+/* 
+
+	Не придумал как их назвать лучше, потому по номерам.
+	Если на конце ставить значение width, если width поменяется, то вроде и не актуально будет )
+
+*/
+
+.content-width-1 {
+	width: 450px;
+}
+
+.content-width-2 {
+	width: 130px;
+}
+
+.content-width-3 {
+	width: 290px;
+}
+
+.content-width-4 {
+	width: 260px;
+}
+
+.content-width-5 {
+	width: 220px;	
+}
+
+.content-width-6 {
+	width: 280px;
+}
+
+.content-width-7 {
+	width: 310px;
+}
+
+.content-width-8 {
+	width: 250px;	
+}
+
 /* INDEX MAIN CONTENT */
 
 /* HOTELS MAIN CONTENT */
 
 .section-filters {
-	height: 220px;
 	padding: 30px 73px;
-	
 	color: #fff;
-	
 	background: url("../img/bg-mountains-2.jpg") 50% 50% no-repeat;
 	background-size: cover;
 }
@@ -621,7 +673,7 @@ img {
 .inner-page-footer {
 	display: flex;
 	width: 100%;
-	height: 120px;	
+	padding: 30px 0;
 	background-color: rgba(255,255,255,0.9);	
 }
 
