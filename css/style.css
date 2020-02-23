@@ -44,6 +44,15 @@ img {
 	max-width: 100%;
 }
 
+[type="number"] {
+    -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
 .visually-hidden {
 	position: absolute;
 
@@ -81,6 +90,91 @@ img {
 	
 	cursor: pointer;
 }
+
+.button-number {
+	position: absolute;
+	top: 0;
+	
+	width: 38px;
+	height: 38px;
+	padding: 0;
+	
+	font-size: 0;	
+	
+	background: none;
+	border: none;
+}
+
+.button-number::after,
+.button-number::before {
+	position: absolute;
+	top: 50%;
+	left: 50%;	
+	
+	background-color: #a9a9a9;
+	
+	transform: translate(-50%, -50%);
+	content: "";
+}
+
+.button-minus::before,
+.button-plus::before {
+	width: 11px;
+	height: 3px;
+}
+
+.button-minus {
+	left: 0;	
+}
+
+.button-plus {
+	right: 0;
+}
+
+.button-plus::after {
+	width: 3px;
+	height: 11px;
+}
+
+.button-number:hover::after,
+.button-number:hover::before,
+.button-number:focus::after,
+.button-number:focus::before  {
+	background-color: #000000;
+}
+
+.button-number:active::after,
+.button-number:active::before {
+	background-color: #81b3d2;
+}
+
+.button-calendar {
+	position: absolute;
+	top: 50%;
+	right: 9px;
+
+	padding: 0;
+	
+	font-size: 0;
+	
+	background: none;
+	border: none;
+	
+	transform: translate(0, -50%);
+}
+
+.button-calendar svg {
+	fill: #cacaca;
+}
+
+.button-calendar:hover svg,
+.button-calendar:focus svg {
+	fill: #000000;
+}
+
+.button-calendar:active svg {
+	fill: #81b3d2;
+}	
 
 .button-wide {
 	width: 576px;
@@ -151,6 +245,11 @@ img {
 	background: none;
 	border: 2px solid #ffffff;
 	border-radius: 2px;
+}
+
+.button-show-results {
+	display: block;
+	margin: 32px auto 0 auto;	
 }
 
 .button-empty-white:hover,
@@ -415,19 +514,75 @@ img {
 
 .booking-form label {
 	font-weight: 700;
+	padding-right: 10px;
+}
+
+.label-children {
+	padding-left: 50px;
+}
+
+.form-row-wrapper {
+	display: flex;	
 }
 
 .form-row-full,
 .form-row-half {
-	display: flex;
+	position: relative;
+	display: flex;	
+	align-items: center;
+}
+
+.form-row-full {
+	margin-bottom: 30px;
 }
 
 .form-row-full label {
-	width: 25%;
+	flex-basis: 114px;
 }
 
 .form-row-half label {
-	width: 50%;
+	flex-grow: 1;
+}
+
+.form-row-half {
+	flex-basis: 50%;
+}
+
+.booking-form-field {
+	height: 38px;
+	
+	color: #000;
+	font-weight: 700;
+	text-transform: uppercase;
+	
+	background-color: #f2f2f2;
+	border: none;
+}
+
+.booking-form-field:hover {
+	background-color: #ebebeb;
+}
+
+.booking-form-field:focus {
+	background-color: #ffffff;
+	box-shadow: 0 0 0 2px #e5e5e5 inset;
+}
+
+.form-field-gray-1 {
+	flex-basis: 114px;
+	flex-grow: 1;
+	padding: 0 40px 0 13px;
+}
+
+.form-field-gray-2 {
+	width: 100%;
+	padding: 0;
+	text-align: center;
+}
+
+.number-field-wrapper {
+	position: relative;
+	width: 114px;
 }
 
 .section-location {
@@ -454,13 +609,6 @@ img {
 	margin-right: auto;
 	margin-left: auto;	
 }
-
-/* 
-
-	Не придумал как их назвать лучше, потому по номерам.
-	Если на конце ставить значение width, если width поменяется, то вроде и не актуально будет )
-
-*/
 
 .content-width-1 {
 	width: 450px;
@@ -517,20 +665,120 @@ img {
 }
 
 .section-filters label {
+	position: relative;
 	display: block;
-}
-
-.section-filters label{
 	margin-top: 23px;
+	padding-left: 41px;
+	line-height: 23px;	
 }
 
 .section-filters label:first-of-type {
 	margin-top: 0;
 }
 
-.section-filters .button-empty-white {
-	display: block;
-	margin: 20px auto 0 auto;
+.checkbox-fake {
+	position: absolute;
+	left: 0;
+	
+	width: 27px;
+	height: 23px;
+	
+	background-image: url("../img/checkbox-off.svg");
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+	
+	cursor: pointer;
+}
+
+.checkbox-fake,
+.checkbox-input:disabled + .checkbox-fake {
+	background-image: url("../img/checkbox-off.svg");
+}
+
+.checkbox-input:checked + .checkbox-fake,
+.checkbox-input:checked:disabled + .checkbox-fake {
+	background-image: url("../img/checkbox-on.svg");
+}
+
+.checkbox-input:disabled + .checkbox-fake,
+.checkbox-input:checked:disabled + .checkbox-fake {
+	opacity: 0.3;
+	cursor: default;
+}
+
+.price-inputs {
+	display: flex;
+	width: 318px;
+	padding: 5px;
+	border: 2px solid #fff;
+	border-radius: 2px;
+}
+
+.price-input {
+	flex-basis: 50%;
+	height: 22px;
+	min-width: 0;
+	
+	color: #fff;
+	text-align: center;
+	text-transform: uppercase;
+	
+	background: none;
+	border: none;
+}
+
+.price-input-left {
+	border-right: 1px solid #fff;
+}
+
+.price-input-right {
+	border-left: 1px solid #fff;
+}
+
+.price-slider {
+	position: relative;
+	height: 2px;
+	margin-top: 20px;
+	background-color: rgba(255,255,255,0.3); 
+}
+
+.current-price-range,
+.handle-left,
+.handle-right {
+	position: absolute;
+}
+
+.handle-left,
+.handle-right {
+	top: -9px;
+	z-index: 100;
+	
+	width: 20px;
+	height: 20px;
+	
+	background-color: #ababab;
+	
+	border-radius: 50%;
+	border: 8px solid #fff;
+	box-shadow: 0 2px 0 0 rgba(255,255,255,0.3);
+
+	cursor: pointer;	
+}
+
+.handle-right {
+	right: 45px;
+}
+
+.current-price-range {
+	z-index: 55;
+	height: 100%;
+	width: 263px;
+	background-color: #fff;
+}
+
+.handle-left:hover,
+.handle-right:hover {
+	transform: scale(1.1);
 }
 
 .header-small,
@@ -544,7 +792,7 @@ img {
 }
 
 .header-small-price {
-	margin-bottom: 15px;
+	margin-bottom: 13px;
 }
 
 .hotels-list {

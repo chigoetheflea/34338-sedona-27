@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/style.css">
-		<title>Гостиницы города Седона</title>
+		<title>Лучшие гостиницы города Седона</title>
 	</head>
 	<body>
 	
@@ -35,39 +35,54 @@
 					<form method="get" action="">
 						<div class="column-left filters-column-1">
 							<h3 class="header-small">Инфраструктура:</h3>
-							<label>
-								<input type="checkbox" value="Бассейн"> Бассейн
+							<label class="checkbox">
+								<input type="checkbox" value="Бассейн" class="checkbox-input visually-hidden" checked>
+								<span class="checkbox-fake"></span>
+								Бассейн
 							</label>
-							<label>
-								<input type="checkbox" value="Парковка"> Парковка
+							<label class="checkbox">
+								<input type="checkbox" value="Парковка" class="checkbox-input visually-hidden" disabled>
+								<span class="checkbox-fake"></span>
+								Парковка
 							</label>
-							<label>
-								<input type="checkbox" value="Wi-Fi"> Wi-Fi
+							<label class="checkbox">
+								<input type="checkbox" value="Wi-Fi" class="checkbox-input visually-hidden">
+								<span class="checkbox-fake"></span>
+								Wi-Fi
 							</label>
 						</div>
 						<div class="column-left filters-column-2">
 							<h3 class="header-small">Тип жилья:</h3>
-							<label>
-								<input type="checkbox" value="Гостиница"> Гостиница
+							<label class="checkbox">
+								<input type="checkbox" value="Гостиница" class="checkbox-input visually-hidden" checked>
+								<span class="checkbox-fake"></span>
+								Гостиница
 							</label>
-							<label>
-								<input type="checkbox" value="Мотель"> Мотель
+							<label class="checkbox">
+								<input type="checkbox" value="Мотель" class="checkbox-input visually-hidden" checked>
+								<span class="checkbox-fake"></span>
+								Мотель
 							</label>
-							<label>
-								<input type="checkbox" value="Апартаменты"> Апартаменты
+							<label class="checkbox">
+								<input type="checkbox" value="Апартаменты" class="checkbox-input visually-hidden" checked>
+								<span class="checkbox-fake"></span>
+								Апартаменты
 							</label>
 						</div>
 						<div class="column-right filters-column-3">
 							<h3 class="header-small-price">Стоимость в сутки (Р):</h3>
 							<div class="price-slider-wrapper">
-								<input type="text" name="booking-price-min" id="price-min" placeholder="Минимальная цена">
-								<input type="text" name="booking-price-max" id="price-max" placeholder="Максимальная цена">
+								<div class="price-inputs">
+									<input type="text" name="booking-price-min" id="price-min" class="price-input price-input-left" placeholder="Минимальная цена" value="От 0">
+									<input type="text" name="booking-price-max" id="price-max" class="price-input price-input-right" placeholder="Максимальная цена" value="До 3000">
+								</div>
 								<div class="price-slider">
 									<div class="handle-left"></div>
 									<div class="handle-right"></div>
+									<div class="current-price-range"></div>
 								</div>
 							</div>
-							<input type="submit" value="Показать" class="button button-empty-white">
+							<input type="submit" value="Показать" class="button button-empty-white button-show-results">
 						</div>
 					</form>
 				</section>
