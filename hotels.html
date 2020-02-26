@@ -19,7 +19,7 @@
 					<ul class="menu-top">
 						<li><a href="">Информация</a></li>
 						<li><a href="">Фото и видео</a></li>
-						<li class="menu-item-right"><a href="">Карта штата</a></li>
+						<li class="menu-item-right menu-item-mla"><a href="">Карта штата</a></li>
 						<li class="menu-item-right current-page-menu-item"><a>Гостиницы</a></li>
 					</ul>
 				</nav>
@@ -30,23 +30,23 @@
 			
 				<h1 class="visually-hidden">Гостиницы города Седона</h1>
 				
-				<section class="section-filters"><!-- Секция с фильтрами -->
+				<section class="section-filters">
 					<h2 class="visually-hidden">Фильтры</h2>
-					<form method="get" action="">
+					<form method="get" action="https://echo.htmlacademy.ru">
 						<div class="column-left filters-column-1">
 							<h3 class="header-small">Инфраструктура:</h3>
 							<label class="checkbox">
-								<input type="checkbox" value="Бассейн" class="checkbox-input visually-hidden" checked>
+								<input type="checkbox" name="booking-pool" value="Бассейн" class="checkbox-input visually-hidden" checked>
 								<span class="checkbox-fake"></span>
 								Бассейн
 							</label>
 							<label class="checkbox">
-								<input type="checkbox" value="Парковка" class="checkbox-input visually-hidden" disabled>
+								<input type="checkbox" name="booking-parking" value="Парковка" class="checkbox-input visually-hidden" disabled>
 								<span class="checkbox-fake"></span>
 								Парковка
 							</label>
 							<label class="checkbox">
-								<input type="checkbox" value="Wi-Fi" class="checkbox-input visually-hidden">
+								<input type="checkbox" name="booking-wifi" value="Wi-Fi" class="checkbox-input visually-hidden">
 								<span class="checkbox-fake"></span>
 								Wi-Fi
 							</label>
@@ -54,17 +54,17 @@
 						<div class="column-left filters-column-2">
 							<h3 class="header-small">Тип жилья:</h3>
 							<label class="checkbox">
-								<input type="checkbox" value="Гостиница" class="checkbox-input visually-hidden" checked>
+								<input type="checkbox" name="booking-hotel" value="Гостиница" class="checkbox-input visually-hidden" checked>
 								<span class="checkbox-fake"></span>
 								Гостиница
 							</label>
 							<label class="checkbox">
-								<input type="checkbox" value="Мотель" class="checkbox-input visually-hidden" checked>
+								<input type="checkbox" name="booking-motel" value="Мотель" class="checkbox-input visually-hidden" checked>
 								<span class="checkbox-fake"></span>
 								Мотель
 							</label>
 							<label class="checkbox">
-								<input type="checkbox" value="Апартаменты" class="checkbox-input visually-hidden" checked>
+								<input type="checkbox" name="booking-apartments" value="Апартаменты" class="checkbox-input visually-hidden" checked>
 								<span class="checkbox-fake"></span>
 								Апартаменты
 							</label>
@@ -72,7 +72,7 @@
 						<div class="column-right filters-column-3">
 							<h3 class="header-small-price">Стоимость в сутки (Р):</h3>
 							<div class="price-slider-wrapper">
-								<div class="price-inputs">
+								<div class="price-inputs">									
 									<input type="text" name="booking-price-min" id="price-min" class="price-input price-input-left" placeholder="Минимальная цена" value="От 0">
 									<input type="text" name="booking-price-max" id="price-max" class="price-input price-input-right" placeholder="Максимальная цена" value="До 3000">
 								</div>
@@ -113,7 +113,7 @@
 							<article class="hotel-item">
 								<img src="img/amara-resort-preview.jpg" alt="Amara Resort & Spa" width="135" height="90" class="hotel-preview">
 								<section class="hotel-description">
-									<h3 class="header-regular">Amara Resort & Spa</h3>
+									<h3 class="hotel-title">Amara Resort & Spa</h3>
 									<div class="hotel-type">
 										<span class="type">Гостиница</span>
 										<span>От 4000 Р.</span>
@@ -133,7 +133,7 @@
 							<article class="hotel-item">
 								<img src="img/desert-quail-preview.jpg" alt="Amara Resort & Spa" width="135" height="90" class="hotel-preview">
 								<section class="hotel-description">
-									<h3 class="header-regular">Desert Quail Inn</h3>
+									<h3 class="hotel-title">Desert Quail Inn</h3>
 									<div class="hotel-type">
 										<span class="type">Мотель</span>
 										<span>От 3000 Р.</span>
@@ -153,7 +153,7 @@
 							<article class="hotel-item">
 								<img src="img/villas-at-poco-diablo.jpg" alt="Villas at Poco Diablo" width="135" height="90" class="hotel-preview">
 								<section class="hotel-description">
-									<h3 class="header-regular">Villas at Poco Diablo</h3>
+									<h3 class="hotel-title">Villas at Poco Diablo</h3>
 									<div class="hotel-type">
 										<span class="type">Апартаменты</span>
 										<span>От 2000 Р.</span>
@@ -176,7 +176,7 @@
 			
 			<footer class="inner-page-footer">
 				<div class="column-one-third footer-column">
-					<div>
+					<div class="footer-content-wrapper-1">
 						<div class="hashtag">#visitsedona</div>
 						<div class="tel">
 							Тел.: <a href="tel:+74956660266">+7(495) 666-02-66</a>
@@ -249,6 +249,8 @@
 			</footer>
 		
 		</div>
+		
+		<div class="pp-hotels"></div>
 
 	</body>
 </html>

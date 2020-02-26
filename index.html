@@ -19,7 +19,7 @@
 					<ul class="menu-top">
 						<li><a href="">Информация</a></li>
 						<li><a href="">Фото и видео</a></li>
-						<li class="menu-item-right"><a href="">Карта штата</a></li>
+						<li class="menu-item-right menu-item-mla"><a href="">Карта штата</a></li>
 						<li class="menu-item-right"><a href="hotels.html">Гостиницы</a></li>
 					</ul>
 				</nav>
@@ -28,14 +28,14 @@
 		
 			<main class="main-content">
 			
-				<section class="section-welcome">
+				<div class="section-welcome">
 					<img src="img/intro-welcome.svg" width="459" height="353" alt="Welcome to the gorgeous Sedona!">
-				</section>
+				</div>
 				
 				<section class="section-reasons">
-					<div class="content-center">
+					<div class="content-center reasons-header-wrapper">
 						<h1 class="header-regular content-width content-width-1">Седона — небольшой городок в Аризоне, заслуживающий большего!</h1>
-						<div>Рассмотрим 5 причин, по которым Седона круче, чем гранд каньон!</div>
+						<div class="reasons-descriptor">Рассмотрим 5 причин, по которым Седона круче, чем гранд каньон!</div>
 					</div>	
 					<ul class="reasons">
 						<li class="reason reason-regular block-blue">
@@ -48,21 +48,21 @@
 						</li>
 						<li class="reason reason-tall">
 							<div class="icon-wrapper">
-								<img src="img/icon-1.svg" class="reason-icon" width="75" height="72" alt="Жильё в Седоне">
+								<img src="img/icon-1.svg" class="reason-icon icon-house" width="75" height="72" alt="Жильё в Седоне">
 							</div>
 							<h2 class="header-regular reason-header">Жильё</h2>							
 							<p class="content-width content-width-4">Рекомендуем пожить в настоящем мотеле, всё как в кино!</p>	
 						</li>
 						<li class="reason reason-tall">
 							<div class="icon-wrapper">
-								<img src="img/icon-3.svg" class="reason-icon" width="74" height="70" alt="Еда в Седоне">
+								<img src="img/icon-3.svg" class="reason-icon icon-food" width="74" height="70" alt="Еда в Седоне">
 							</div>
 							<h2 class="header-regular reason-header">Еда</h2>
 							<p class="content-width content-width-3">Всегда заказывайте фирменный бургер, вы не разочаруетесь!</p>	
 						</li>
 						<li class="reason reason-tall">
 							<div class="icon-wrapper">
-								<img src="img/icon-2.svg" class="reason-icon" width="64" height="76" alt="Сувениры из Седоны">
+								<img src="img/icon-2.svg" class="reason-icon icon-gift" width="64" height="76" alt="Сувениры из Седоны">
 							</div>	
 							<h2 class="header-regular reason-header">Сувениры</h2>
 							<p class="content-width content-width-6">Не только китайского, но и местного производства!</p>	
@@ -94,13 +94,13 @@
 				</section>
 				
 				<section class="section-booking">
-					<div class="content-center">
+					<div class="content-center booking-header-wrapper">
 						<h2 class="header-large">Заинтересовались?</h2>
-						<div>Укажите предполагаемые даты поездки,<br>и мы покажем вам лучшие предложения гостиниц в седоне</div>
+						<div class="booking-descriptor">Укажите предполагаемые даты поездки,<br>и мы покажем вам лучшие предложения гостиниц в седоне</div>
 					</div>
 					<div class="booking-form-wrapper">
 						<a href="booking.html" class="button button-brown button-wide">Поиск гостиницы в Седоне</a>
-						<form method="post" action="" class="booking-form">
+						<form method="post" action="https://echo.htmlacademy.ru" class="booking-form">
 							<h3 class="visually-hidden">Поиск гостиницы в Седоне</h3>
 							<div class="form-row-full">
 								<label for="date-in" class="form-label">Дата заезда:</label>
@@ -140,7 +140,7 @@
 									</div>
 								</div>
 							</div>
-							<input type="submit" value="Найти" class="button button-blue button-full-width ">
+							<input type="submit" value="Найти" class="button button-blue button-full-width">
 						</form>
 					</div>	
 				</section>
@@ -150,14 +150,14 @@
 					<div id="sedona-location" class="map-js">
 						<!-- Контейнер для карты -->
 					</div>
-					<img src="img/map.jpg" class="map-img" width="" height="" alt="Седона на карте">
+					<img src="img/map.jpg" class="map-img" width="1200" height="594" alt="Седона на карте">
 				</section>
 				
 			</main>
 
 			<footer class="main-footer">
 				<div class="column-one-third footer-column">
-					<div>
+					<div class="footer-content-wrapper-1">
 						<div class="hashtag">#visitsedona</div>
 						<div class="tel">
 							Тел.: <a href="tel:+74956660266">+7(495) 666-02-66</a>
@@ -230,6 +230,8 @@
 			</footer>
 		
 		</div>
+		
+		<div class="pp-index"></div>
 
 	</body>
 </html>
