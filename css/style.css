@@ -9,7 +9,7 @@
 
 @font-face { 
     font-family: "PT Sans";
-    src: 	local("PT Sans"),
+    src: 	local("PT Sans Bold"),
 			url(../fonts/ptsansbold.woff2) format("woff2"),
 			url(../fonts/ptsansbold.woff) format("woff");
     font-weight: 700;
@@ -592,6 +592,12 @@ input::-webkit-inner-spin-button {
 	border: none;
 }
 
+.booking-form-field::placeholder {
+	color: #000000;
+	font-weight: 700;
+	opacity: 1;
+}
+
 .booking-form-field:hover{
 	background-color: #ebebeb;
 }
@@ -825,7 +831,7 @@ input::-webkit-inner-spin-button {
 }
 
 .handle-left {
-	left: 2px;
+	left: 0;
 }
 
 .handle-right {
