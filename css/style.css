@@ -37,7 +37,10 @@ body {
 }
 
 a {
-	text-decoration: none;	
+	text-decoration: none;
+	transition-property: color, background-color;
+	transition-duration: 0.2s;
+	transition-timing-function: ease;	
 }
 
 img {
@@ -51,6 +54,10 @@ img {
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
+}
+
+.svg-transition {
+	transition: fill ease 0.2s;
 }
 
 .visually-hidden {
@@ -89,6 +96,9 @@ input::-webkit-inner-spin-button {
 	text-transform: uppercase;	
 	
 	cursor: pointer;
+	transition-property: color, background-color;
+	transition-duration: 0.2s;
+	transition-timing-function: ease;
 }
 
 .button-number {
@@ -115,6 +125,7 @@ input::-webkit-inner-spin-button {
 	
 	transform: translate(-50%, -50%);
 	content: "";
+	transition: background-color ease 0.2s;
 }
 
 .button-minus::before,
@@ -175,6 +186,11 @@ input::-webkit-inner-spin-button {
 .button-calendar:active svg {
 	fill: #81b3d2;
 }	
+
+.button-booking {
+	position: relative;
+	z-index: 200;
+}
 
 .button-wide {
 	width: 100%;
@@ -238,7 +254,7 @@ input::-webkit-inner-spin-button {
 }
 
 .button-empty-white {
-	padding: 0 35px;
+	padding: 0 33px;
 	
 	color: #ffffff;
 	font-weight: 400;
@@ -252,6 +268,7 @@ input::-webkit-inner-spin-button {
 .button-show-results {
 	display: block;
 	margin: 32px auto 0 auto;	
+	transform: translate(-3px);
 }
 
 .button-empty-white:hover,
@@ -535,15 +552,60 @@ input::-webkit-inner-spin-button {
 	margin: 0 auto;
 }
 
-.booking-form {
+.booking-form-perspective {
 	position: absolute;
+	z-index: 100;
 	top: 100%;
 	left: 0;
+	
+	width: 100%;
+	
+	perspective: 1500px;
+	perspective-origin: 50% 0;
+	pointer-events: none;	
+}
+
+.booking-form {
 	
 	width: 100%; 
 	padding: 55px;
 	
 	background-color: #fff;
+	
+	transform-origin: 50% 0;
+	transform:rotateX(-90deg);
+	pointer-events: none;
+	transition: transform ease 0.6s;
+	
+}
+
+.form-show {
+	transform:rotateX(0deg);
+	pointer-events: auto;
+}
+
+@keyframes validation-error {
+	0%,
+	100% {
+		transform: translateX(0);
+	}
+	10%,
+	30%,
+	50%,
+	70%,
+	90% {
+		transform: translateX(-10px);
+	}
+	20%,
+	40%,
+	60%,
+	80% {
+		transform: translateX(10px);
+	}
+}
+
+.validation-error {
+	animation: validation-error 0.6s;
 }
 
 .booking-form label {
@@ -590,6 +652,7 @@ input::-webkit-inner-spin-button {
 	
 	background-color: #f2f2f2;
 	border: none;
+	transition: all ease 0.2s;
 }
 
 .booking-form-field::placeholder {
@@ -646,6 +709,23 @@ input::-webkit-inner-spin-button {
 	
 	width: 100%;
 	height: 100%;
+}
+
+/*
+
+	After - чтобы карта была немного потемнее.
+
+*/
+
+.map-js::after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.05);
+	pointer-events: none;
+	content: "";
 }
 
 .content-width {
@@ -749,21 +829,19 @@ input::-webkit-inner-spin-button {
 	cursor: default;
 }
 
-.checkbox-input:focus + .checkbox-fake::after {	
-	content: "";
+.checkbox-input:focus + .checkbox-fake::after {
+	content:"";
 	
 	position: absolute;
 	top: 50%;
-	left: -15px;
+	left: 0;
 	
-	width: 8px;
-	height: 8px;
-	margin-top: -4px;
+	width: 23px;
+	height: 23px;
+	margin-top: -11px;	
 	
-	background-color: #fff;
-	
-	border-radius: 50%;
-	box-shadow: 0 0 5px 0 #fff;
+	background-color: rgba(255,255,255,0.35);
+	border-radius: 3px;
 }
 
 .price-inputs {
@@ -827,7 +905,8 @@ input::-webkit-inner-spin-button {
 	border: 8px solid #fff;
 	box-shadow: 0 2px 0 0 rgba(255,255,255,0.3);
 
-	cursor: pointer;	
+	cursor: pointer;
+	transition: transform ease 0.2s;	
 }
 
 .handle-left {
@@ -1073,7 +1152,7 @@ input::-webkit-inner-spin-button {
 	position: relative;
 	top: -1px;
 	width: 115px;
-	height: 39px;
+	height: 39px;	
 }
 
 .logo-htmla {
