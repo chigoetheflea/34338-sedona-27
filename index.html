@@ -2,7 +2,7 @@
 <html lang="ru">
 	<head>
 		<meta charset="utf-8">
-		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/normalize.min.css">
 		<link rel="stylesheet" href="css/style.css">
 		<title>Город Седона</title>
 	</head>
@@ -20,7 +20,7 @@
 						<li><a href="">Информация</a></li>
 						<li><a href="">Фото и видео</a></li>
 						<li class="menu-item-right menu-item-mla"><a href="">Карта штата</a></li>
-						<li class="menu-item-right"><a href="hotels.html">Гостиницы</a></li>
+						<li class="menu-item-right"><a href="hotels.html">Гостиницы</a></li>						
 					</ul>
 				</nav>
 				
@@ -44,31 +44,31 @@
 							<p class="content-width content-width-3">Седона — не аттракцион для туристов, там течёт своя жизнь</p>							
 						</li>
 						<li class="block-img">
-							<img src="img/sedona-view-1.jpg" width="801" height="256" alt="Город Седона">
+							<img src="img/sedona-view-1.jpg" width="801" height="256" alt="Город Седона" class="img-right">
 						</li>
 						<li class="reason reason-tall">
 							<div class="icon-wrapper">
 								<img src="img/icon-1.svg" class="reason-icon icon-house" width="75" height="72" alt="Жильё в Седоне">
 							</div>
-							<h2 class="header-regular reason-header">Жильё</h2>							
+							<h2 class="header-regular reason-header content-width content-width-5">Жильё</h2>							
 							<p class="content-width content-width-4">Рекомендуем пожить в настоящем мотеле, всё как в кино!</p>	
 						</li>
 						<li class="reason reason-tall">
 							<div class="icon-wrapper">
 								<img src="img/icon-3.svg" class="reason-icon icon-food" width="74" height="70" alt="Еда в Седоне">
 							</div>
-							<h2 class="header-regular reason-header">Еда</h2>
+							<h2 class="header-regular reason-header content-width content-width-5">Еда</h2>
 							<p class="content-width content-width-3">Всегда заказывайте фирменный бургер, вы не разочаруетесь!</p>	
 						</li>
 						<li class="reason reason-tall">
 							<div class="icon-wrapper">
 								<img src="img/icon-2.svg" class="reason-icon icon-gift" width="64" height="76" alt="Сувениры из Седоны">
 							</div>	
-							<h2 class="header-regular reason-header">Сувениры</h2>
+							<h2 class="header-regular reason-header content-width content-width-5">Сувениры</h2>
 							<p class="content-width content-width-6">Не только китайского, но и местного производства!</p>	
 						</li>
-						<li class="block-img">
-							<img src="img/sedona-view-2.jpg" width="801" height="256" alt="Мост дьявола">
+						<li class="block-img block-left">
+							<img src="img/sedona-view-2.jpg" width="801" height="256" alt="Мост дьявола" class="img-left">
 						</li>
 						<li class="reason reason-regular block-blue">
 							<h2 class="header-regular reason-header">Там есть<br>Мост дьявола</h2>
@@ -149,10 +149,8 @@
 				
 				<section class="section-location">
 					<h2 class="visually-hidden">Седона на карте</h2>
-					<div id="sedona-location" class="map-js">
-						<!-- Контейнер для карты -->
-					</div>
-					<img src="img/map_yandex.jpg" class="map-img" width="1200" height="594" alt="Седона на карте">
+					<div id="sedona-location" class="map-js"></div>
+					<img src="img/map-yandex.jpg" class="map-img" width="1200" height="594" alt="Седона на карте">
 				</section>
 				
 			</main>
@@ -162,7 +160,7 @@
 					<div class="footer-content-wrapper-1">
 						<div class="hashtag">#visitsedona</div>
 						<div class="tel">
-							Тел.: <a href="tel:+74956660266">+7(495) 666-02-66</a>
+							Тел: <a href="tel:+74956660266">+7(495) 666-02-66</a>
 						</div>	
 					</div>
 				</div>
@@ -232,9 +230,7 @@
 			</footer>
 		
 		</div>
-		
-		<div class="pp-index"></div>
-		
+			
 		<script src="//api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
 		<script src="js/sedona-scripts.js"></script>
 

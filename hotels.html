@@ -2,7 +2,7 @@
 <html lang="ru">
 	<head>
 		<meta charset="utf-8">
-		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/normalize.min.css">
 		<link rel="stylesheet" href="css/style.css">
 		<title>Великолепные гостиницы города Седона</title>
 	</head>
@@ -73,8 +73,8 @@
 							<h3 class="header-small-price">Стоимость в сутки (Р):</h3>
 							<div class="price-slider-wrapper">
 								<div class="price-inputs">									
-									<input type="text" name="booking-price-min" id="price-min" class="price-input price-input-left" placeholder="Минимальная цена" value="От 0">
-									<input type="text" name="booking-price-max" id="price-max" class="price-input price-input-right" placeholder="Максимальная цена" value="До 3000">
+									<input type="text" name="booking-price-min" id="price-min" class="price-input price-input-left" placeholder="От 0" value="От 0" aria-label="Минимальная стоимость">
+									<input type="text" name="booking-price-max" id="price-max" class="price-input price-input-right" placeholder="До 3000" value="До 3000" aria-label="Максимальная стоимость">
 								</div>
 								<div class="price-slider">
 									<div class="handle-left"></div>
@@ -111,9 +111,9 @@
 					<ul class="hotels-list">
 						<li>
 							<article class="hotel-item">
-								<img src="img/amara-resort-preview.jpg" alt="Amara Resort & Spa" width="135" height="90" class="hotel-preview">
+								<img src="img/amara-resort-preview.jpg" width="135" height="90" alt="Amara Resort & Spa" class="hotel-preview">
 								<section class="hotel-description">
-									<h3 class="hotel-title">Amara Resort & Spa</h3>
+									<h3 class="hotel-title"><a href="" target="_blank">Amara Resort & Spa</a></h3>
 									<div class="hotel-type">
 										<span class="type">Гостиница</span>
 										<span>От 4000 Р.</span>
@@ -131,9 +131,9 @@
 						</li>
 						<li>
 							<article class="hotel-item">
-								<img src="img/desert-quail-preview.jpg" alt="Amara Resort & Spa" width="135" height="90" class="hotel-preview">
+								<img src="img/desert-quail-preview.jpg" width="135" height="90" alt="Amara Resort & Spa" class="hotel-preview">
 								<section class="hotel-description">
-									<h3 class="hotel-title">Desert Quail Inn</h3>
+									<h3 class="hotel-title"><a href="" target="_blank">Desert Quail Inn</a></h3>
 									<div class="hotel-type">
 										<span class="type">Мотель</span>
 										<span>От 3000 Р.</span>
@@ -151,9 +151,9 @@
 						</li>
 						<li>
 							<article class="hotel-item">
-								<img src="img/villas-at-poco-diablo.jpg" alt="Villas at Poco Diablo" width="135" height="90" class="hotel-preview">
+								<img src="img/villas-at-poco-diablo.jpg" width="135" height="90" alt="Villas at Poco Diablo" class="hotel-preview">
 								<section class="hotel-description">
-									<h3 class="hotel-title">Villas at Poco Diablo</h3>
+									<h3 class="hotel-title"><a href="" target="_blank">Villas at Poco Diablo</a></h3>
 									<div class="hotel-type">
 										<span class="type">Апартаменты</span>
 										<span>От 2000 Р.</span>
@@ -179,7 +179,7 @@
 					<div class="footer-content-wrapper-1">
 						<div class="hashtag">#visitsedona</div>
 						<div class="tel">
-							Тел.: <a href="tel:+74956660266">+7(495) 666-02-66</a>
+							Тел: <a href="tel:+74956660266">+7(495) 666-02-66</a>
 						</div>	
 					</div>
 				</div>
@@ -248,9 +248,7 @@
 				</div>
 			</footer>
 		
-		</div>
-		
-		<div class="pp-hotels"></div>
+		</div>	
 
 	</body>
 </html>

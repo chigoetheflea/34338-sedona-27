@@ -8,7 +8,9 @@ var buttonBooking 		= document.querySelector(".button-booking"),
 	childrenCount		= formBooking.querySelector("[name=booking-children-num]"),
 	isStorageSupport	= true,
 	storageAdultsNum	= "",
-	storageChildrenNum 	= ""; 
+	storageChildrenNum 	= "";
+
+formBooking.classList.add("form-closed");	
 	
 try {
 	
@@ -28,7 +30,7 @@ buttonBooking.addEventListener("click", function (e) {
 	if(storageAdultsNum) 	adultsCount.value = storageAdultsNum;
 	if(storageChildrenNum) 	childrenCount.value = storageChildrenNum;
 	
-	formBooking.classList.toggle("form-show");
+	formBooking.classList.toggle("form-closed");
 	bookingDateIn.focus();
 	
 });
@@ -72,7 +74,7 @@ ymaps.ready(function () {
 			searchControlProvider: "yandex#search"
 		}
 	),
-	marker1 = new ymaps.Placemark([34.869497, -111.760186], 
+	marker = new ymaps.Placemark([34.869497, -111.760186], 
 		{
 			hintContent: "Город Седона",
 			balloonContent: ""
@@ -84,7 +86,7 @@ ymaps.ready(function () {
 			iconImageOffset: [-40, -72]
 		}
 	);
-	myMap.geoObjects.add(marker1);
+	myMap.geoObjects.add(marker);
 	
 });	
 
