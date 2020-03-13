@@ -1,21 +1,21 @@
 /* Валидация и анимация формы бронирования */
 
-var buttonBooking 		= document.querySelector(".button-booking"),
-	formBooking			= document.querySelector(".booking-form"),
-	bookingDateIn		= formBooking.querySelector("[name=booking-date-in]"),
-	bookingDateOut		= formBooking.querySelector("[name=booking-date-out]"),
-	adultsCount			= formBooking.querySelector("[name=booking-adults-num]"),
-	childrenCount		= formBooking.querySelector("[name=booking-children-num]"),
-	isStorageSupport	= true,
-	storageAdultsNum	= "",
-	storageChildrenNum 	= "";
+var buttonBooking = document.querySelector(".button-booking"),
+	formBooking = document.querySelector(".booking-form"),
+	bookingDateIn = formBooking.querySelector("[name=booking-date-in]"),
+	bookingDateOut = formBooking.querySelector("[name=booking-date-out]"),
+	adultsCount = formBooking.querySelector("[name=booking-adults-num]"),
+	childrenCount = formBooking.querySelector("[name=booking-children-num]"),
+	isStorageSupport = true,
+	storageAdultsNum = "",
+	storageChildrenNum = "";
 
 formBooking.classList.add("form-closed");	
 	
 try {
 	
-	storageAdultsNum 	= localStorage.getItem("adultsCount");
-	storageChildrenNum 	= localStorage.getItem("childrenCount");
+	storageAdultsNum = localStorage.getItem("adultsCount");
+	storageChildrenNum = localStorage.getItem("childrenCount");
 	
 } catch (err) {
 	
@@ -27,8 +27,8 @@ buttonBooking.addEventListener("click", function (e) {
 	
 	e.preventDefault();
 	
-	if(storageAdultsNum) 	adultsCount.value = storageAdultsNum;
-	if(storageChildrenNum) 	childrenCount.value = storageChildrenNum;
+	if(storageAdultsNum) adultsCount.value = storageAdultsNum;
+	if(storageChildrenNum) childrenCount.value = storageChildrenNum;
 	
 	formBooking.classList.toggle("form-closed");
 	bookingDateIn.focus();
@@ -40,12 +40,20 @@ formBooking.addEventListener("submit", function (e) {
 	if(!bookingDateIn.value || !bookingDateOut.value) {
 		
 		e.preventDefault();
+		
+		if(!bookingDateIn.value) bookingDateIn.classList.add("error");
+		else bookingDateIn.classList.remove("error");
+		
+		if(!bookingDateOut.value) bookingDateOut.classList.add("error");
+		else bookingDateOut.classList.remove("error");
 			
 		formBooking.classList.remove("validation-error");
 		formBooking.offsetWidth = formBooking.offsetWidth;
 		formBooking.classList.add("validation-error");	
 		
 	} else {
+		
+		formBooking.querySelector(".error").classList.remove(".error");
 		
 		if(isStorageSupport) {
 			
@@ -81,7 +89,7 @@ ymaps.ready(function () {
 		}, 
 		{
 			iconLayout: "default#image",
-			iconImageHref: "http://fsfamily.ru/imgs/marker.png", /*тут с относительным путем так и не заработало :( */
+			iconImageHref: "http://fsfamily.ru/imgs/marker.png",
 			iconImageSize: [80, 72],
 			iconImageOffset: [-40, -72]
 		}
@@ -91,6 +99,3 @@ ymaps.ready(function () {
 });	
 
 /* Карта */
-
-
- 
