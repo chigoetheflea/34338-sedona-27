@@ -801,6 +801,10 @@ input::-webkit-inner-spin-button {
 	height: 100%;
 }
 
+.filters-column-1 {
+	flex-basis: 136px;
+}
+
 .filters-column-2 {
 	flex-grow: 1;
 	margin-left: 119px;	
@@ -1059,7 +1063,7 @@ input::-webkit-inner-spin-button {
 }
 
 .stars-5 {
-	width: 114px;
+	width: 106px;
 }
 
 .rating {
